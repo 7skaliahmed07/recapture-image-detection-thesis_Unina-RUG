@@ -1,0 +1,11 @@
+{
+    "Model": "Laplacian_MobileNetV2",
+    "Preprocessing": "Laplacian",
+    "Mean_Accuracy": 0.7401041666666666,
+    "Std_Accuracy": 0.10574007025057826,
+    "Mean_Precision_recaptured": 0.8255078330132053,
+    "Mean_Recall_recaptured": 0.6487020069808028,
+    "Mean_F1-Score_recaptured": 0.670789373962881,
+    "Mean_Total_Parameters": 2259265.0,
+    "Mean_Trainable_Parameters": 1207361.0
+}
