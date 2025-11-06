@@ -1,0 +1,11 @@
+{
+    "Model": "RGB_Laplacian_EfficientNetB0",
+    "Preprocessing": "RGB_Laplacian",
+    "Mean_Accuracy": 0.89,
+    "Std_Accuracy": 0.03,
+    "Mean_Precision_recaptured": 0.87,
+    "Mean_Recall_recaptured": 0.9,
+    "Mean_F1-Score_recaptured": 0.89,
+    "Mean_Total_Parameters": 8427079,
+    "Mean_Trainable_Parameters": 8343033
+}
