@@ -1,0 +1,11 @@
+{
+    "Model": "Fourier_Balanced_CNN",
+    "Preprocessing": "Fourier",
+    "Mean_Accuracy": 0.4994791666666667,
+    "Std_Accuracy": 0.0011646187382811487,
+    "Mean_Precision_recaptured": 0.4994791666666667,
+    "Mean_Recall_recaptured": 1.0,
+    "Mean_F1-Score_recaptured": 0.6662028985507246,
+    "Mean_Total_Parameters": 258881.0,
+    "Mean_Trainable_Parameters": 258177.0
+}
