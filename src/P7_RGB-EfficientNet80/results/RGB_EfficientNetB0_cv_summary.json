@@ -1,0 +1,11 @@
+{
+    "Model": "RGB_EfficientNetB0",
+    "Preprocessing": "RGB",
+    "Mean_Accuracy": 0.8583333333333334,
+    "Std_Accuracy": 0.018652088103614538,
+    "Mean_Precision_recaptured": 0.8612718347809581,
+    "Mean_Recall_recaptured": 0.8540303228621291,
+    "Mean_F1-Score_recaptured": 0.8575225592373658,
+    "Mean_Total_Parameters": 4213668.0,
+    "Mean_Trainable_Parameters": 1515057.0
+}
