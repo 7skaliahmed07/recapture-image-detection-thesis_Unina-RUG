@@ -42,9 +42,13 @@ These papers helped decide the right direction for this project.
 ## 🧠 Technical Words Explained
 
 🎞 **Moiré Pattern** – Wavy lines that appear when a screen is photographed.
+
 🎨 **Color Artifacts** – Unnatural colors near edges in screen photos.
+
 🔊 **Fourier Transform** – Looks at frequency patterns in an image.
+
 ✂️ **Laplacian Filter** – Highlights edges and small details.
+
 🔁 **Transfer Learning** – Using a pre-trained model to improve accuracy and save time.
 
 ---
@@ -105,12 +109,19 @@ Two advanced models were also used to improve accuracy.
 Eight experiments were done using different model and image combinations:
 
 1️⃣ Basic image analysis and preprocessing
+
 2️⃣ CNN on Fourier images
+
 3️⃣ MobileNetV2 on Fourier images
+
 4️⃣ MobileNetV2 on Laplacian images
+
 5️⃣ MobileNetV2 on both Fourier and Laplacian images
+
 6️⃣ MobileNetV2 on RGB (normal) images
+
 7️⃣ EfficientNet on RGB images
+
 8️⃣ EfficientNet on both Laplacian and RGB images
 
 ---
@@ -149,6 +160,7 @@ All code is written in **Google Colab**.
 ## 🎓 Credits
 
 **Faculty of Science and Engineering**
+
 **Information Systems — Bernoulli Institute**
 
 **Master’s Thesis by:**
@@ -156,10 +168,12 @@ All code is written in **Google Colab**.
 
 **Affiliations:**
 🏛 **PRISMA Research Lab, University of Groningen, The Netherlands**
+
 🏛 **Department of Electrical Engineering and Information Technology, University of Naples Federico II, Italy**
 
 **Supervisors:**
 👨‍🏫 **Prof. George Azzopardi** — University of Groningen, The Netherlands
+
 👨‍🏫 **Dr. Guru Swaroop Bennabhatkula** — University of Groningen, The Netherlands
 
 ---
