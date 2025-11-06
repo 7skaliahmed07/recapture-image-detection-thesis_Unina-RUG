@@ -1,0 +1,11 @@
+{
+    "Model": "RGB_MobileNetV2",
+    "Preprocessing": "RGB",
+    "Mean_Accuracy": 0.7260416666666667,
+    "Std_Accuracy": 0.07815537603914043,
+    "Mean_Precision_recaptured": 0.6819200244922278,
+    "Mean_Recall_recaptured": 0.8968041012216406,
+    "Mean_F1-Score_recaptured": 0.7694796738220072,
+    "Mean_Total_Parameters": 2422081.0,
+    "Mean_Trainable_Parameters": 1370177.0
+}
