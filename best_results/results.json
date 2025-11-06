@@ -1,0 +1,132 @@
+{
+  "best_models_comparison": {
+    "summary": {
+      "total_models_tested": 8,
+      "best_performing_models": 4,
+      "top_accuracy": 0.90,
+      "performance_ranking": [
+        "RGB_Laplacian_EfficientNetB0",
+        "RGB_EfficientNetB0", 
+        "RGB_MobileNetV2",
+        "Laplacian_MobileNetV2"
+      ]
+    },
+    "models": {
+      "RGB_Laplacian_EfficientNetB0": {
+        "rank": 1,
+        "accuracy": 0.90,
+        "architecture": "Dual-stream EfficientNetB0",
+        "input_processing": ["RGB", "Laplacian"],
+        "parameters": {
+          "total": 8427079,
+          "trainable": 8343033
+        },
+        "performance_metrics": {
+          "precision_originals": 0.91,
+          "recall_originals": 0.88,
+          "f1_originals": 0.90,
+          "precision_recaptured": 0.88,
+          "recall_recaptured": 0.92,
+          "f1_recaptured": 0.90
+        },
+        "training_config": {
+          "learning_rate": 0.0001,
+          "batch_size": 16,
+          "optimizer": "Adam",
+          "epochs": 8,
+          "dropout_rate": 0.4
+        },
+        "strengths": ["Highest accuracy", "Best balanced performance", "Combines color and texture features"],
+        "weaknesses": ["Highest computational cost", "Most parameters"]
+      },
+      "RGB_EfficientNetB0": {
+        "rank": 2,
+        "accuracy": 0.877,
+        "architecture": "Single-stream EfficientNetB0",
+        "input_processing": ["RGB"],
+        "parameters": {
+          "total": 4213668,
+          "trainable": 1515057
+        },
+        "performance_metrics": {
+          "precision_originals": 0.870,
+          "recall_originals": 0.888,
+          "f1_originals": 0.879,
+          "precision_recaptured": 0.885,
+          "recall_recaptured": 0.867,
+          "f1_recaptured": 0.876
+        },
+        "training_config": {
+          "learning_rate": 0.0001,
+          "batch_size": 16,
+          "optimizer": "Adam",
+          "epochs": 8,
+          "dropout_rate": 0.4
+        },
+        "strengths": ["Excellent accuracy", "More efficient than dual-stream", "Good balance"],
+        "weaknesses": ["Lower than top performer", "Still computationally heavy"]
+      },
+      "RGB_MobileNetV2": {
+        "rank": 3,
+        "accuracy": 0.857,
+        "architecture": "Single-stream MobileNetV2",
+        "input_processing": ["RGB"],
+        "parameters": {
+          "total": 2422081,
+          "trainable": 1370177
+        },
+        "performance_metrics": {
+          "precision_originals": 0.814,
+          "recall_originals": 0.925,
+          "f1_originals": 0.866,
+          "precision_recaptured": 0.913,
+          "recall_recaptured": 0.788,
+          "f1_recaptured": 0.846
+        },
+        "training_config": {
+          "learning_rate": 0.0001,
+          "batch_size": 16,
+          "optimizer": "Adam",
+          "epochs": 8,
+          "dropout_rate": 0.4
+        },
+        "strengths": ["Lightweight", "Fast inference", "Good for deployment"],
+        "weaknesses": ["Lower accuracy than EfficientNet", "Imbalanced recall between classes"]
+      },
+      "Laplacian_MobileNetV2": {
+        "rank": 4,
+        "accuracy": 0.846,
+        "architecture": "Single-stream MobileNetV2",
+        "input_processing": ["Laplacian"],
+        "parameters": {
+          "total": 2259265,
+          "trainable": 1207361
+        },
+        "performance_metrics": {
+          "precision_originals": 0.835,
+          "recall_originals": 0.863,
+          "f1_originals": 0.849,
+          "precision_recaptured": 0.858,
+          "recall_recaptured": 0.829,
+          "f1_recaptured": 0.843
+        },
+        "training_config": {
+          "learning_rate": 0.0001,
+          "batch_size": 16,
+          "optimizer": "Adam",
+          "epochs": 8,
+          "dropout_rate": 0.5
+        },
+        "strengths": ["Lightest model", "Edge-focused processing", "Resource-efficient"],
+        "weaknesses": ["Lowest accuracy among top models", "Limited to texture features only"]
+      }
+    },
+    "recommendations": {
+      "best_overall": "RGB_Laplacian_EfficientNetB0",
+      "best_balanced": "RGB_EfficientNetB0",
+      "best_efficient": "RGB_MobileNetV2",
+      "best_lightweight": "Laplacian_MobileNetV2",
+      "key_insight": "Combining RGB and Laplacian processing in dual-stream architecture provides the best detection performance for recaptured photos"
+    }
+  }
+}
