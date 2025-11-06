@@ -87,8 +87,8 @@ To make the dataset **balanced**, about **500 recaptured images** were removed, 
 
 ## 🧩 Notes
 
-✔️ Dataset focuses only on **screen recaptures** from laptops, monitors, or smartphones.
-
+✔️ Dataset focuses only on **screen recaptures** from laptops, monitors, or smartphones,
+and You can make a request for the dataset
 ---
 
 💾 **Total Size:** ~17 GB
