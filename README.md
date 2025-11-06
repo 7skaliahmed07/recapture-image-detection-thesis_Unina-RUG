@@ -1,115 +1,167 @@
-# Image Recapture Detection
+# 🌐 Image Recapture Detection
 
---> Introduction
+## 💡 Introduction
 
-This project is about finding if an image is original or a recaptured one. A recaptured image means a photo taken of a digital screen like a laptop, tablet, or smartphone. The aim is to detect small clues that show if the picture was taken from a screen and not directly from a digital file.
+This project studies how to tell if an image is **original** or a **recaptured photo**.
+A recaptured image is a photo taken of a **digital screen** such as a **laptop, tablet, or smartphone**.
+The goal is to detect small visual clues that show whether an image was taken from a screen or is an original digital file.
 
---> What is Recapture Detection
+---
 
-Recapture detection helps us understand if a photo was taken from another screen. When someone takes a photo of a monitor, small visual marks appear because of screen pixels, reflections, or lighting. These clues can be used by computers to know if an image is real or recaptured.
+## 🔍 What is Recapture Detection
 
---> Why It Is Important
+Recapture detection helps computers find out if a photo was taken from another screen.
+When a person takes a picture of a monitor, tiny marks appear because of **screen pixels**, **light reflections**, or **camera focus**.
+These small changes help identify a recaptured image.
 
-1. It helps stop stealing of important digital information.
-2. It can be used to find fake ID photos or fake screenshots.
-3. It helps in digital security and forensic work.
+---
 
---> Papers Studied
+## 🔒 Why It Is Important
 
-Before building the model, six main research papers were studied. Each one used different ideas like chromaticity maps, adversarial learning, and attention networks. These papers helped understand what works best for this problem.
+1️⃣ Helps prevent the stealing of important digital data.
+2️⃣ Useful in finding **fake screenshots** or **fake ID photos**.
+3️⃣ Supports **digital security** and **forensic investigations**.
 
-Some main ideas from the papers:
+---
 
-- Looking at color changes that happen when screens are photographed.
-- Using special networks to separate clean images from recaptured ones.
-- Using physical light reflections to find screen images.
-- Mixing local and global image details for better prediction.
+## 📚 Papers Studied
 
---> Technical Words Explained
+Before building the models, six main research papers were reviewed.
+Each used different ideas like **chromaticity maps**, **adversarial learning**, and **attention networks**.
+These papers helped decide the right direction for this project.
 
-- Moiré Pattern: Strange wavy lines that appear when taking a photo of a screen.
-- Color Artifacts: Weird colors around edges in photos of screens.
-- Fourier Transform: A way to look at images using their frequency details.
-- Laplacian Filter: Finds sharp edges in an image.
-- Transfer Learning: Using a pre-trained model to save time and improve results.
+### Main Ideas from the Papers
 
---> Method Used
+✨ Studying how colors change when screens are photographed.
+✨ Using neural networks that can tell clean and recaptured images apart.
+✨ Observing light reflections and pixel patterns.
+✨ Mixing local and global details for better results.
 
---># Step 1: Image Feature Extraction
+---
 
-Two main image processing techniques were used:
+## 🧠 Technical Words Explained
 
-Fourier Transform
+🎞 **Moiré Pattern** – Wavy lines that appear when a screen is photographed.
+🎨 **Color Artifacts** – Unnatural colors near edges in screen photos.
+🔊 **Fourier Transform** – Looks at frequency patterns in an image.
+✂️ **Laplacian Filter** – Highlights edges and small details.
+🔁 **Transfer Learning** – Using a pre-trained model to improve accuracy and save time.
 
-- Changes the image into frequency space.
-- Helps find patterns like moiré lines.
+---
 
-Laplacian Filter
+## ⚙️ Method Used
 
-- Finds edges and small details.
-- Helps detect blur and unnatural sharpness from screens.
+### 🔸 Step 1: Image Feature Extraction
 
---># Step 2: Custom CNN Model
+Two image processing methods were used:
 
-A small CNN model was created for classification. It has four convolution layers, followed by pooling, batch normalization, dropout, and finally a dense layer with sigmoid output. It predicts if an image is original or recaptured.
+📈 **Fourier Transform**
 
---># Step 3: Using Transfer Learning
+* Changes the image into frequency form.
+* Finds repeating patterns like moiré lines.
 
-Two advanced models, MobileNetV2 and EfficientNet, were also tested.
+🧩 **Laplacian Filter**
 
-MobileNetV2
+* Detects edges and fine details.
+* Helps find blur and unnatural sharpness from screen photos.
 
-- Small and fast model.
-- Works well even with less data.
+---
 
-EfficientNet
+### 🔸 Step 2: Custom CNN Model
 
-- Gives high accuracy with fewer parameters.
-- Keeps fine details that help detect screen artifacts.
+A simple **Convolutional Neural Network (CNN)** was built to classify images as *original* or *recaptured*.
+It includes:
 
---> Experiments
+* Four convolution layers
+* Global average pooling
+* Batch normalization
+* Dropout for regularization
+* Dense output layer with sigmoid activation
 
-Eight experiments were done using different image types and model combinations:
+This model is lightweight and easy to train on medium datasets.
 
-1. Normal image analysis and cleaning
-2. CNN on Fourier images
-3. MobileNetV2 on Fourier images
-4. MobileNetV2 on Laplacian images
-5. MobileNetV2 on both Fourier and Laplacian images
-6. MobileNetV2 on RGB (normal) images
-7. EfficientNet on RGB images
-8. EfficientNet Two Models on Laplacian images and RGB
+---
 
---> Results
+### 🔸 Step 3: Transfer Learning Models
 
-The best result came from the model that used both Fourier and Laplacian processed images with MobileNetV2. It reached around 94% accuracy. This shows that mixing traditional image filters with modern deep learning gives very good results.
+Two advanced models were also used to improve accuracy.
 
---> How to Use
+📱 **MobileNetV2**
 
-All the code is written in Google Colab.
+* Fast and small model.
+* Works well with limited data.
+* Suitable for real-world mobile applications.
 
-1. Open any notebook from the `src` folder.
-2. Install the libraries given in `requirements.txt`.
-3. Run all the cells to train and test the model.
+⚡ **EfficientNet**
 
---> Credits
+* High accuracy with fewer parameters.
+* Keeps fine image textures.
+* Great for detailed recapture detection tasks.
 
-Faculty of Science and Engineering
-Information Systems — Bernoulli Institute
+---
 
-Master's Thesis
-UZER AHMED
+## 🧪 Experiments Conducted
 
-Affiliation:
-PRISMA Research Lab, University of Groningen, The Netherlands
-Department of Electrical Engineering and Information Technology [Note: Adjust if different], Federico II University of Naples, Italy
+Eight experiments were done using different model and image combinations:
 
-Thesis Supervisors:
+1️⃣ Basic image analysis and preprocessing
+2️⃣ CNN on Fourier images
+3️⃣ MobileNetV2 on Fourier images
+4️⃣ MobileNetV2 on Laplacian images
+5️⃣ MobileNetV2 on both Fourier and Laplacian images
+6️⃣ MobileNetV2 on RGB (normal) images
+7️⃣ EfficientNet on RGB images
+8️⃣ EfficientNet on both Laplacian and RGB images
 
-1. Prof. George Azzopardi (Primary Supervisor)
-   University of Groningen, The Netherlands
+---
 
-2. Dr. Guru Swaroop Bennabhatkula (Co-Supervisor)
-   University of Groningen, The Netherlands
+## 📊 Results
 
-This project is focused only on images taken from digital screens like laptops, smartphones, and tablets — not from paper or printed copies.
+🥇 **RGB + Laplacian EfficientNetB0** — 90% Accuracy
+⭐ Best overall model with balanced precision and recall
+⭐ Combines both RGB and Laplacian image inputs
+⭐ High accuracy but uses more parameters (8.4M)
+
+🥈 **RGB EfficientNetB0** — 87.7% Accuracy
+⭐ Strong single-stream model using only RGB images
+⭐ Balanced performance and lower complexity
+
+🥉 **RGB MobileNetV2** — 85.7% Accuracy
+⭐ Very lightweight model
+⭐ Ideal for mobile or real-time use
+
+4️⃣ **Laplacian MobileNetV2** — 84.6% Accuracy
+⭐ Uses only edge information
+⭐ Most efficient model for low-resource systems
+
+---
+
+## 🧰 How to Use
+
+All code is written in **Google Colab**.
+
+1️⃣ Open any notebook from the `src` folder.
+2️⃣ Install the required libraries listed in `requirements.txt`.
+3️⃣ Run all the cells to train and test the models.
+
+---
+
+## 🎓 Credits
+
+**Faculty of Science and Engineering**
+**Information Systems — Bernoulli Institute**
+
+**Master’s Thesis by:**
+👨‍🎓 **Uzer Ahmed**
+
+**Affiliations:**
+🏛 **PRISMA Research Lab, University of Groningen, The Netherlands**
+🏛 **Department of Electrical Engineering and Information Technology, University of Naples Federico II, Italy**
+
+**Supervisors:**
+👨‍🏫 **Prof. George Azzopardi** — University of Groningen, The Netherlands
+👨‍🏫 **Dr. Guru Swaroop Bennabhatkula** — University of Groningen, The Netherlands
+
+---
+
+This project focuses only on **images taken from digital screens** such as **laptops, smartphones, and tablets** — not from paper or printed copies.
