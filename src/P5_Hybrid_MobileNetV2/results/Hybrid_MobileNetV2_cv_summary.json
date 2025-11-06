@@ -1,0 +1,11 @@
+{
+    "Model": "Hybrid_MobileNetV2",
+    "Preprocessing": "Fourier_Laplacian",
+    "Mean_Accuracy": 0.7375,
+    "Std_Accuracy": 0.0798294963087127,
+    "Mean_Precision_recaptured": 0.7655914038673717,
+    "Mean_Recall_recaptured": 0.6915030541012216,
+    "Mean_F1-Score_recaptured": 0.712979149907168,
+    "Mean_Total_Parameters": 4843905.0,
+    "Mean_Trainable_Parameters": 2740097.0
+}
