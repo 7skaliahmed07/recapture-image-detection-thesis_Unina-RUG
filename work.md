@@ -1,0 +1,39 @@
+1. **Image-Analysis (Stage-1)**  
+   Performed initial exploratory data analysis on NTU-Roselab dataset.  
+   Visualized originals vs recaptures using histograms, edges, and frequency domain.
+
+2. **Fourier CNN Model**  
+   Applied 2D FFT to images and trained a custom CNN on magnitude spectrum.  
+   Aimed to detect moiré patterns typical in screen recaptures.
+
+3. **Fourier-MobileNetV2**  
+   Preprocessed images with FFT and fed log-magnitude to MobileNetV2.  
+   Lightweight model for frequency-based recapture detection.
+
+4. **Laplacian-MobileNetV2**  
+   Enhanced edge information using Laplacian filter before MobileNetV2.  
+   Focused on sharpness differences between original and recaptured images.
+
+5. **FFT & Laplacian-MobileNetV2**  
+   Combined FFT (frequency) and Laplacian (edges) as 2-channel input.  
+   Multi-domain feature fusion for improved recapture classification.
+
+6. **RGB-MobileNetV2**  
+   Trained MobileNetV2 directly on raw RGB images (no preprocessing).  
+   Baseline spatial-domain model using transfer learning.
+
+7. **RGB-EfficientNetB0**  
+   Used EfficientNetB0 on RGB input for higher accuracy and efficiency.  
+   Stronger backbone for learning complex visual patterns.
+
+8. **RGB-EfficientNetB0-Laplacian**  
+   Concatenated RGB and Laplacian channels (4-channel input).  
+   Hybrid model leveraging both color and edge sharpness cues.
+
+9. **RGB-EfficientNetB0-Laplacian (Roselab + Android-captured)**  
+   Trained on merged NTU-Roselab and real Android phone recapture data.  
+   Improved cross-device generalization with Laplacian enhancement.
+
+10. **RGB-EfficientNetB0 (Roselab + Android-captured)**  
+    Final model trained on merged dataset using only RGB (no extra channels).  
+    Achieved **~82% val accuracy** 

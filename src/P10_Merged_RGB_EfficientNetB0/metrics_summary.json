@@ -1,5 +1,5 @@
 {
-  "val_accuracy": 0.8271604938271605,
+  "val_accuracy": 0.82,
   "original_correct": 32,
   "recaptured_correct": 35,
   "total": 81
