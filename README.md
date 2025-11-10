@@ -156,4 +156,3 @@ Eleven experiments were done using different models, datasets, and preprocessing
 ⭐ Uses only edge information  
 ⭐ Most efficient model for low-resource systems
 
-### Detailed classification report (Model 11)
