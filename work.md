@@ -1,3 +1,41 @@
+
+---
+
+## 🧰 How to Use
+
+All code is written in **Google Colab**.
+
+1️⃣ Open any notebook from the `src` folder.
+2️⃣ Install the required libraries listed in `requirements.txt`.
+3️⃣ Run all the cells to train and test the models.
+
+---
+
+## 🎓 Credits
+
+**Faculty of Science and Engineering**
+
+**Information Systems — Bernoulli Institute**
+
+**Master’s Thesis by:**
+👨‍🎓 **Uzer Ahmed**
+
+**Affiliations:**
+🏛 **PRISMA Research Lab, University of Groningen, The Netherlands**
+
+🏛 **Department of Electrical EngineeringFmt and Information Technology, University of Naples Federico II, Italy**
+
+**Supervisors:**
+👨‍🏫 **Prof. George Azzopardi** — University of Groningen, The Netherlands
+
+👨‍🏫 **Dr. Guru Swaroop Bennabhatkula** — University of Groningen, The Netherlands
+
+---
+
+This project focuses only on **images taken from digital screens** such as **laptops, smartphones, and tablets** — not from paper or printed copies.
+
+-------------------------------------------------------------------------------------------
+
 1. **Image-Analysis (Stage-1)**  
    Performed initial exploratory data analysis on NTU-Roselab dataset.  
    Visualized originals vs recaptures using histograms, edges, and frequency domain.
@@ -31,9 +69,10 @@
    Hybrid model leveraging both color and edge sharpness cues.
 
 9. **RGB-EfficientNetB0-Laplacian (Roselab + Android-captured)**  
-   Trained on merged NTU-Roselab and real Android phone recapture data.  
-   Improved cross-device generalization with Laplacian enhancement.
+   Merged NTU-Roselab with real Android-captured recaptures. Laplacian filter was applied but did not improve performance significantly.
 
 10. **RGB-EfficientNetB0 (Roselab + Android-captured)**  
-    Final model trained on merged dataset using only RGB (no extra channels).  
-    Achieved **~82% val accuracy** 
+    Trained on merged dataset using only RGB (removed Laplacian). Model showed bias toward NTU-Roselab images. ~82% val accuracy.
+
+11. **RGB-EfficientNetB0 (NTU-Android x8) + iPhone testing**  
+    Multiplied Android-captured images by 8 (1600 total) to balance NTU-Roselab (2400). Trained on RGB only. Excellent generalization; tested successfully on unseen iPhone recaptures. Achieved 92% accuracy.

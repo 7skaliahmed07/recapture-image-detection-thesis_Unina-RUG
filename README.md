@@ -106,7 +106,7 @@ Two advanced models were also used to improve accuracy.
 
 ## 🧪 Experiments Conducted
 
-Eight experiments were done using different model and image combinations:
+Eleven experiments were done using different models, datasets, and preprocessing combinations:
 
 1️⃣ Basic image analysis and preprocessing
 
@@ -124,58 +124,36 @@ Eight experiments were done using different model and image combinations:
 
 8️⃣ EfficientNet on both Laplacian and RGB images
 
+9️⃣ RGB-EfficientNetB0-Laplacian (Roselab + Android-captured)
+
+🔟 RGB-EfficientNetB0 (Roselab + Android-captured)
+
+1️⃣1️⃣ RGB-EfficientNetB0 (NTU-Android x8) + Testing on iPhone
+
 ---
 
 ## 📊 Results
 
-🥇 **RGB + Laplacian EfficientNetB0** — 90% Accuracy
-⭐ Best overall model with balanced precision and recall
-⭐ Combines both RGB and Laplacian image inputs
+🥇 **RGB-EfficientNetB0 (NTU-Android x8) + iPhone test** — **92% Accuracy**  
+⭐ New best model with excellent balance and real-world generalization  
+⭐ Precision 0.92 | Recall 0.92 | F1 0.92  
+⭐ Works reliably on both Android-captured and iPhone test images  
+
+🥈 **RGB + Laplacian EfficientNetB0** — 90% Accuracy  
+⭐ Best overall model with balanced precision and recall  
+⭐ Combines both RGB and Laplacian image inputs  
 ⭐ High accuracy but uses more parameters (8.4M)
 
-🥈 **RGB EfficientNetB0** — 87.7% Accuracy
-⭐ Strong single-stream model using only RGB images
+🥉 **RGB EfficientNetB0** — 87.7% Accuracy  
+⭐ Strong single-stream model using only RGB images  
 ⭐ Balanced performance and lower complexity
 
-🥉 **RGB MobileNetV2** — 85.7% Accuracy
-⭐ Very lightweight model
+4️⃣ **RGB MobileNetV2** — 85.7% Accuracy  
+⭐ Very lightweight model  
 ⭐ Ideal for mobile or real-time use
 
-4️⃣ **Laplacian MobileNetV2** — 84.6% Accuracy
-⭐ Uses only edge information
+5️⃣ **Laplacian MobileNetV2** — 84.6% Accuracy  
+⭐ Uses only edge information  
 ⭐ Most efficient model for low-resource systems
 
----
-
-## 🧰 How to Use
-
-All code is written in **Google Colab**.
-
-1️⃣ Open any notebook from the `src` folder.
-2️⃣ Install the required libraries listed in `requirements.txt`.
-3️⃣ Run all the cells to train and test the models.
-
----
-
-## 🎓 Credits
-
-**Faculty of Science and Engineering**
-
-**Information Systems — Bernoulli Institute**
-
-**Master’s Thesis by:**
-👨‍🎓 **Uzer Ahmed**
-
-**Affiliations:**
-🏛 **PRISMA Research Lab, University of Groningen, The Netherlands**
-
-🏛 **Department of Electrical Engineering and Information Technology, University of Naples Federico II, Italy**
-
-**Supervisors:**
-👨‍🏫 **Prof. George Azzopardi** — University of Groningen, The Netherlands
-
-👨‍🏫 **Dr. Guru Swaroop Bennabhatkula** — University of Groningen, The Netherlands
-
----
-
-This project focuses only on **images taken from digital screens** such as **laptops, smartphones, and tablets** — not from paper or printed copies.
+### Detailed classification report (Model 11)
