@@ -156,3 +156,5 @@ Eleven experiments were done using different models, datasets, and preprocessing
 ⭐ Uses only edge information  
 ⭐ Most efficient model for low-resource systems
 
+🚀 Live Demo
+Try it here: https://huggingface.co/spaces/UzerDeveloper07/screen-recapture-detection
