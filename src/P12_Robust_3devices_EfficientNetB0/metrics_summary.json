@@ -1,0 +1,8 @@
+{
+  "val_accuracy": 0.85,
+  "f1_original": 0.86,
+  "f1_recaptured": 0.84,
+  "original_correct": 261,
+  "recaptured_correct": 229,
+  "total_samples": 575
+}
