@@ -1,4 +1,6 @@
 # 🌐 Image Recapture Detection
+![image_alt](https://github.com/7skaliahmed07/recapture-image-detection-thesis_Unina-RUG/blob/52ed0ea656d6f0247302fd00a3d9f8fad3994eed/recapture.webp)
+
 
 ## 💡 Introduction
 
