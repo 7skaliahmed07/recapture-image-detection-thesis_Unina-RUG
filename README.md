@@ -1,4 +1,6 @@
 # 🌐 Image Recapture Detection
+![image_alt](https://github.com/7skaliahmed07/recapture-image-detection-thesis_Unina-RUG/blob/52ed0ea656d6f0247302fd00a3d9f8fad3994eed/recapture.webp)
+
 
 ## 💡 Introduction
 
@@ -106,55 +108,128 @@ Two advanced models were also used to improve accuracy.
 
 ## 🧪 Experiments Conducted
 
-Eleven experiments were done using different models, datasets, and preprocessing combinations:
+Thirteen experiments were conducted to systematically compare different approaches for recapture detection:
 
-1️⃣ Basic image analysis and preprocessing
+### 🔬 Stage 1: Basic Image Analysis
+**1️⃣ Image-Analysis (Stage-1)**
+- Used Fourier Transform and Laplacian filters
+- Found that basic methods work well for smartphone recaptures but fail for professional DSLR recaptures
+- **Key Finding**: Professional equipment minimizes artifacts, making detection harder
 
-2️⃣ CNN on Fourier images
+### 🔄 Stage 2: Frequency Domain Approaches
+**2️⃣ Fourier CNN Model**
+- Combined Fourier features with custom CNN
+- **Result**: 50% accuracy - model failed to learn meaningful patterns
+- **Insight**: Fourier features alone are insufficient for professional recaptures
 
-3️⃣ MobileNetV2 on Fourier images
+**3️⃣ Fourier-MobileNetV2**
+- Used MobileNetV2 with Fourier inputs
+- **Result**: 50% accuracy - same failure pattern
+- **Critical Conclusion**: Fast Fourier Transformation does not work for finely recaptured images
 
-4️⃣ MobileNetV2 on Laplacian images
+### 📸 Stage 3: Spatial Domain Approaches
+**4️⃣ Laplacian-MobileNetV2**
+- Used Laplacian sharpness features with MobileNetV2
+- **Result**: 85% accuracy - first successful experiment
+- **Breakthrough**: Spatial features work better than frequency features
 
-5️⃣ MobileNetV2 on both Fourier and Laplacian images
+**5️⃣ Hybrid MobileNetV2**
+- Combined both Fourier and Laplacian features
+- **Result**: 81% accuracy - good but not best
+- **Insight**: Combination helps but has limitations
 
-6️⃣ MobileNetV2 on RGB (normal) images
+### 🎨 Stage 4: RGB-Based Approaches
+**6️⃣ RGB-MobileNetV2**
+- Used normal color images without special processing
+- **Result**: 86% accuracy - excellent performance
+- **Discovery**: Simple RGB images work very well
 
-7️⃣ EfficientNet on RGB images
+**7️⃣ RGB-EfficientNetB0**
+- Used EfficientNetB0 with RGB images
+- **Result**: 88% accuracy - new best performance
+- **Advantage**: More balanced and consistent than MobileNetV2
 
-8️⃣ EfficientNet on both Laplacian and RGB images
+**8️⃣ RGB + Laplacian EfficientNetB0**
+- Dual-input model combining RGB and Laplacian features
+- **Result**: 90% accuracy - best performance so far
+- **Strength**: Perfect balance between precision and recall
 
-9️⃣ RGB-EfficientNetB0-Laplacian (Roselab + Android-captured)
+### 📱 Stage 5: Multi-Device Experiments
+**9️⃣ Merged Dataset with Android Photos**
+- Combined NTU DSLR and Android phone images
+- **Result**: Failed - model couldn't learn from mixed quality data
+- **Problem**: Big quality differences between devices caused confusion
 
-🔟 RGB-EfficientNetB0 (Roselab + Android-captured)
+**🔟 Rebalanced Dataset with Android Oversampling**
+- Added 8x oversampling of Android photos
+- **Result**: 83% accuracy - successful improvement
+- **Solution**: Dataset balancing enables mixed-device learning
 
-1️⃣1️⃣ RGB-EfficientNetB0 (NTU-Android x8) + Testing on iPhone
+**1️⃣1️⃣ Final Merged Model with F1 Optimization**
+- Comprehensive mixed-dataset model with F1 optimization
+- **Result**: 92% accuracy - best mixed-dataset performance
+- **Achievement**: Proved mixed datasets can work with proper techniques
+
+**1️⃣2️⃣ Robust 4-Device EfficientNetB0**
+- Model trained for generalization across multiple devices
+- Focused on cross-device compatibility
+
+**1️⃣3️⃣ MobileNetV3 for 3 Mobile Devices**
+- Specialized model for mobile-only images
+- **Result**: 89% accuracy - excellent mobile performance
+- **Key Insight**: Device-specific models avoid generalization problems
 
 ---
 
-## 📊 Results
+## 📊 Results Summary
 
-🥇 **RGB-EfficientNetB0 (NTU-Android x8) + iPhone test** — **92% Accuracy**  
-⭐ New best model with excellent balance and real-world generalization  
-⭐ Precision 0.92 | Recall 0.92 | F1 0.92  
-⭐ Works reliably on both Android-captured and iPhone test images  
+### 🥇 **Top Performing Models**
 
-🥈 **RGB + Laplacian EfficientNetB0** — 90% Accuracy  
-⭐ Best overall model with balanced precision and recall  
-⭐ Combines both RGB and Laplacian image inputs  
-⭐ High accuracy but uses more parameters (8.4M)
+**RGB-EfficientNetB0 (NTU-Android x8)** — **92% Accuracy**  
+⭐ Best overall model with excellent generalization  
+⭐ Perfect balance: Precision 0.92 | Recall 0.92 | F1 0.92  
+⭐ Works reliably across different devices  
 
-🥉 **RGB EfficientNetB0** — 87.7% Accuracy  
-⭐ Strong single-stream model using only RGB images  
-⭐ Balanced performance and lower complexity
+**RGB + Laplacian EfficientNetB0** — **90% Accuracy**  
+⭐ Best dual-input model  
+⭐ Combines RGB and edge information effectively  
+⭐ High accuracy with good interpretability  
 
-4️⃣ **RGB MobileNetV2** — 85.7% Accuracy  
-⭐ Very lightweight model  
-⭐ Ideal for mobile or real-time use
+**MobileNetV3 (3 Mobile Devices)** — **89% Accuracy**  
+⭐ Best device-specific model  
+⭐ Excellent for mobile-only applications  
+⭐ Avoids cross-device generalization issues  
 
-5️⃣ **Laplacian MobileNetV2** — 84.6% Accuracy  
-⭐ Uses only edge information  
-⭐ Most efficient model for low-resource systems
+### 🎯 **Key Findings**
 
-🚀 Live Demo
-Try it here: https://huggingface.co/spaces/UzerDeveloper07/screen-recapture-detection
+1. **RGB images work better** than specialized features for professional recaptures
+2. **EfficientNetB0 outperforms** MobileNetV2 for this task
+3. **Device-specific models** work better than universal models
+4. **Dataset balancing** is crucial for mixed-device training
+5. **Fourier Transform fails** for high-quality professional recaptures
+
+### 📈 **Performance Evolution**
+- Basic methods: 50% accuracy (failed)
+- Single features: 85% accuracy 
+- Combined features: 90% accuracy
+- Optimized models: 92% accuracy
+
+---
+
+## 🚀 Live Demo
+Try the recapture detection system here:  
+**https://huggingface.co/spaces/UzerDeveloper07/screen-recapture-detection**
+
+The demo allows you to upload images and test whether they are original or recaptured from screens using our best-performing models.
+
+---
+
+## 💡 Conclusion
+
+This research demonstrates that:
+- **Simple approaches often work best** - RGB images outperform complex feature extraction
+- **Device specialization matters** - Different models work best for different device types
+- **Dataset quality is crucial** - Balanced, well-structured data enables better learning
+- **Real-world deployment is achievable** - Models can be optimized for practical use
+
+The project successfully identified effective strategies for recapture detection and produced models suitable for real-world security applications.
