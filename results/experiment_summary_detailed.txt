@@ -1,0 +1,58 @@
+
+COMPLETE EXPERIMENT SUMMARY (Exp 2-8)
+=====================================
+
+EXPERIMENT RESULTS (Same Test Set - 481 images):
+------------------------------------------------
+Exp  Model                               Test Acc  Originals (P/R)   Recaptured (P/R)   Status
+2    Fourier_Balanced_CNN                0.499     0.000 / 0.000     0.499 / 1.000     FAILED
+3    Fourier_MobileNetV2                 0.499     0.000 / 0.000     0.499 / 1.000     FAILED  
+4    Laplacian_MobileNetV2               0.846     0.835 / 0.863     0.858 / 0.829     GOOD
+5    Hybrid_MobileNetV2                  0.807     0.968 / 0.635     0.728 / 0.979     IMBALANCED
+6    RGB_MobileNetV2                     0.857     0.814 / 0.925     0.913 / 0.788     GOOD
+7    RGB_EfficientNetB0                  0.877     0.870 / 0.888     0.885 / 0.867     BETTER
+8    RGB_Laplacian_EfficientNetB0        0.900     0.910 / 0.880     0.880 / 0.920     BEST
+
+KEY TECHNICAL FINDINGS:
+----------------------
+1. FOURIER PREPROCESSING COMPLETELY FAILS
+   - Both Exp 2 & 3 achieve ~50% accuracy by always predicting "recaptured"
+   - Fourier transform destroys recapture discrimination features
+
+2. LAPLACIAN WORKS BUT RGB IS BETTER
+   - Exp 4 (Laplacian): 84.6% accuracy
+   - Exp 6 (RGB): 85.7% accuracy -> +1.1% improvement
+
+3. ARCHITECTURE MATTERS: EfficientNetB0 > MobileNetV2
+   - Exp 7 (EfficientNetB0): 87.7% > Exp 6 (MobileNetV2): 85.7% -> +2.0% improvement
+
+4. BEST COMBINATION: RGB + Laplacian + EfficientNetB0
+   - Exp 8: 90.0% accuracy with perfect F1 balance (0.90 for both classes)
+
+5. HYBRID FOURIER+LAPLACIAN CAUSES PROBLEMS
+   - Exp 5: Severe class imbalance despite 80.7% accuracy
+   - High false negatives for originals, high false positives for recaptured
+
+CV PERFORMANCE ANALYSIS:
+-----------------------
+- Fourier models: Complete failure (0% precision for originals)
+- Laplacian: High variance (55.7% to 81.5% across folds)
+- RGB models: More consistent performance
+- EfficientNetB0: Best CV consistency across all experiments
+
+RECOMMENDATIONS:
+---------------
+1. Use RGB_Laplacian_EfficientNetB0 (Exp 8) for maximum accuracy (90%)
+2. For simpler deployment, use RGB_EfficientNetB0 (Exp 7) with 87.7% accuracy
+3. Abandon Fourier preprocessing entirely
+4. Focus on EfficientNet architecture family
+5. Maintain consistent test set methodology
+
+NEXT STEPS:
+----------
+- Deploy Exp 8 model for production use
+- Analyze failure cases to understand remaining 10% error
+- Consider ensemble of Exp 7 and Exp 8 for potential improvement
+- Investigate why Fourier preprocessing fails (academic interest)
+
+Full detailed report: complete_experiment_report.pdf
