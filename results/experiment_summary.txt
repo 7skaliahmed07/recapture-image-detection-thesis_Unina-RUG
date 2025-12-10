@@ -1,0 +1,57 @@
+
+EXPERIMENT SUMMARY (09-13)
+==========================
+
+RESULTS:
+--------
+Exp 09: RGB_EfficientNetB0-Laplacian      50.0%  FAILED
+Exp 10: RGB-EfficientNetB0 Balanced       92.2%  GOOD
+Exp 11: RGB-EnetB0 + iPhone Test          92.2%  CONSISTENT
+Exp 12: Robust_3_devices_EfficientNetB0   94.8%  BEST
+Exp 13: MobileNetV3_3_devices             89.0%  GOOD
+
+DETAILED METRICS:
+-----------------
+Exp 09 (FAILED):
+- Accuracy: 50.0% (random guessing)
+- F1 Score (Original): 0.000
+- F1 Score (Recaptured): 0.667
+
+Exp 10 (BALANCED):
+- Accuracy: 92.2%
+- F1 Score (Original): 0.920
+- F1 Score (Recaptured): 0.920
+- Dataset: 566 samples (284 originals, 282 recaptures)
+
+Exp 11 (CROSS-DEVICE):
+- Accuracy: 92.2% (identical to Exp 10)
+- Tested on iPhone (trained on Android)
+- Perfect generalization
+
+Exp 12 (BEST):
+- Accuracy: 94.8%
+- F1 Score (Original): 0.950
+- F1 Score (Recaptured): 0.947
+- Test set: 135 samples (68 originals, 67 recaptures)
+
+Exp 13 (EFFICIENT):
+- Accuracy: 89.0%
+- F1 Score (Original): 0.890
+- F1 Score (Recaptured): 0.890
+- MobileNetV3 architecture
+
+KEY FINDINGS:
+-------------
+1. Laplacian preprocessing fails with EfficientNetB0
+2. Balanced datasets are critical for good performance
+3. Models generalize well across different devices
+4. EfficientNetB0 gives best accuracy (94.8%)
+5. MobileNetV3 offers good efficiency (89%)
+
+RECOMMENDATIONS:
+---------------
+1. Use Exp 12 for production (94.8% accuracy)
+2. Use Exp 13 for mobile apps (89% accuracy)
+3. Always balance training datasets
+4. Test on multiple device types
+5. Avoid Laplacian preprocessing with EfficientNetB0
