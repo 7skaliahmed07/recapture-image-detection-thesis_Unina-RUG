@@ -1,0 +1,6 @@
+,precision,recall,f1-score,support
+Original,0.71,0.57,0.63,219.0
+Recaptured,0.71,0.81,0.76,277.0
+accuracy,0.71,0.71,0.71,0.71
+macro avg,0.71,0.69,0.69,496.0
+weighted avg,0.71,0.71,0.7,496.0
