@@ -1,0 +1,29 @@
+{
+  "total_originals": 408,
+  "total_recaptures": 391,
+  "total_images": 799,
+  "per_device_originals": {
+    "nothing": 105,
+    "pixel": 100,
+    "iphone-16": 40,
+    "poco-m3": 133,
+    "iphone-11": 30
+  },
+  "per_device_recaptures": {
+    "poco-m3": 131,
+    "pixel": 100,
+    "nothing": 103,
+    "iphone-11": 30,
+    "iphone-16": 27
+  },
+  "splits": {
+    "train": {
+      "originals": 346,
+      "recaptures": 332
+    },
+    "test": {
+      "originals": 62,
+      "recaptures": 59
+    }
+  }
+}

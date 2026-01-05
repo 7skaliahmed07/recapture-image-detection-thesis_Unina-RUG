@@ -1,0 +1,2 @@
+total_originals,total_recaptures,total_images,per_device_originals,per_device_recaptures,splits
+408,391,799,"{'nothing': 105, 'pixel': 100, 'iphone-16': 40, 'poco-m3': 133, 'iphone-11': 30}","{'poco-m3': 131, 'pixel': 100, 'nothing': 103, 'iphone-11': 30, 'iphone-16': 27}","{'train': {'originals': 346, 'recaptures': 332}, 'test': {'originals': 62, 'recaptures': 59}}"
