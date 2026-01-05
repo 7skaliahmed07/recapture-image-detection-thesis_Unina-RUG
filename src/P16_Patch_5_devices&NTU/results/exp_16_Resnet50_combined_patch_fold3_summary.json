@@ -1,0 +1,5 @@
+{
+  "fold": 3,
+  "val_accuracy": 0.61,
+  "test_accuracy": 0.63
+}

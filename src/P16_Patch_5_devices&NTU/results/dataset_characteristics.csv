@@ -1,0 +1,2 @@
+total_originals,total_recaptures,total_images,sources_originals,sources_recaptures,device_detail_originals,device_detail_recaptures,splits
+1182,1367,2549,"{'ntu': 774, 'devices': 408}","{'ntu': 976, 'devices': 391}","{'pixel': 100, 'nothing': 105, 'poco-m3': 133, 'iphone-16': 40, 'iphone-11': 30}","{'iphone-11': 30, 'nothing': 103, 'poco-m3': 131, 'iphone-16': 27, 'pixel': 100}","{'train': {'originals': 1004, 'recaptures': 1161}, 'test': {'originals': 178, 'recaptures': 206}}"

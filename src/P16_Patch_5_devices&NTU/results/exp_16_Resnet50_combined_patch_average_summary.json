@@ -1,0 +1,22 @@
+{
+  "experiment": "exp_14_Resnet50_combined_patch",
+  "avg_val_accuracy": 0.65,
+  "avg_test_accuracy": 0.66,
+  "fold_details": [
+    {
+      "fold": 1,
+      "val_accuracy": 0.67,
+      "test_accuracy": 0.68
+    },
+    {
+      "fold": 2,
+      "val_accuracy": 0.66,
+      "test_accuracy": 0.66
+    },
+    {
+      "fold": 3,
+      "val_accuracy": 0.61,
+      "test_accuracy": 0.63
+    }
+  ]
+}

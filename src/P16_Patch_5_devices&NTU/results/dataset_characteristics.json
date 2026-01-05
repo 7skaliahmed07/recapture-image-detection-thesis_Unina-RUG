@@ -1,0 +1,37 @@
+{
+  "total_originals": 1182,
+  "total_recaptures": 1367,
+  "total_images": 2549,
+  "sources_originals": {
+    "ntu": 774,
+    "devices": 408
+  },
+  "sources_recaptures": {
+    "ntu": 976,
+    "devices": 391
+  },
+  "device_detail_originals": {
+    "pixel": 100,
+    "nothing": 105,
+    "poco-m3": 133,
+    "iphone-16": 40,
+    "iphone-11": 30
+  },
+  "device_detail_recaptures": {
+    "iphone-11": 30,
+    "nothing": 103,
+    "poco-m3": 131,
+    "iphone-16": 27,
+    "pixel": 100
+  },
+  "splits": {
+    "train": {
+      "originals": 1004,
+      "recaptures": 1161
+    },
+    "test": {
+      "originals": 178,
+      "recaptures": 206
+    }
+  }
+}
