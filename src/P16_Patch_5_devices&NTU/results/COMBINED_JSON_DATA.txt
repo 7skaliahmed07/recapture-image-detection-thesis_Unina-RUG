@@ -1,0 +1,144 @@
+================================================================================
+COMBINED JSON FILES DATA
+================================================================================
+
+📄 FILE: dataset_characteristics.json
+------------------------------------------------------------
+{
+  "total_originals": 1182,
+  "total_recaptures": 1367,
+  "total_images": 2549,
+  "sources_originals": {
+    "ntu": 774,
+    "devices": 408
+  },
+  "sources_recaptures": {
+    "ntu": 976,
+    "devices": 391
+  },
+  "device_detail_originals": {
+    "pixel": 100,
+    "nothing": 105,
+    "poco-m3": 133,
+    "iphone-16": 40,
+    "iphone-11": 30
+  },
+  "device_detail_recaptures": {
+    "iphone-11": 30,
+    "nothing": 103,
+    "poco-m3": 131,
+    "iphone-16": 27,
+    "pixel": 100
+  },
+  "splits": {
+    "train": {
+      "originals": 1004,
+      "recaptures": 1161
+    },
+    "test": {
+      "originals": 178,
+      "recaptures": 206
+    }
+  }
+}
+================================================================================
+
+📄 FILE: exp_16_Resnet50_combined_patch_average_summary.json
+------------------------------------------------------------
+{
+  "experiment": "exp_14_Resnet50_combined_patch",
+  "avg_val_accuracy": 0.65,
+  "avg_test_accuracy": 0.66,
+  "fold_details": [
+    {
+      "fold": 1,
+      "val_accuracy": 0.67,
+      "test_accuracy": 0.68
+    },
+    {
+      "fold": 2,
+      "val_accuracy": 0.66,
+      "test_accuracy": 0.66
+    },
+    {
+      "fold": 3,
+      "val_accuracy": 0.61,
+      "test_accuracy": 0.63
+    }
+  ]
+}
+================================================================================
+
+📄 FILE: exp_16_Resnet50_combined_patch_fold1_summary.json
+------------------------------------------------------------
+{
+  "fold": 1,
+  "val_accuracy": 0.67,
+  "test_accuracy": 0.68
+}
+================================================================================
+
+📄 FILE: exp_16_Resnet50_combined_patch_fold2_summary.json
+------------------------------------------------------------
+{
+  "fold": 2,
+  "val_accuracy": 0.66,
+  "test_accuracy": 0.66
+}
+================================================================================
+
+📄 FILE: exp_16_Resnet50_combined_patch_fold3_summary.json
+------------------------------------------------------------
+{
+  "fold": 3,
+  "val_accuracy": 0.61,
+  "test_accuracy": 0.63
+}
+================================================================================
+
+📄 FILE: pipeline_summary.json
+------------------------------------------------------------
+{
+  "experiment": "Experiment - 14",
+  "datasets_used": [
+    "NTU-Roselab-Dataset",
+    "Devices (5 mobiles)"
+  ],
+  "seed": 42,
+  "img_size": 224,
+  "batch_size": 16,
+  "repeat_factor": 4,
+  "augmentation": [
+    "random_flip_left_right",
+    "random_brightness(0.1)",
+    "random_contrast(0.9,1.1)"
+  ],
+  "preprocessing": "none",
+  "model": "ResNet50(include_top=False) + GAP + Dropout(0.4) + Dense(128,relu) + Dense(1,sigmoid)",
+  "optimizer": "Adam(0.0001)",
+  "loss": "binary_crossentropy",
+  "metrics": [
+    "accuracy"
+  ],
+  "split": {
+    "train_frac": 0.85,
+    "test_frac": 0.15
+  },
+  "hyperparameters": {
+    "learning_rate": 0.0001,
+    "batch_size": 16,
+    "optimizer": "Adam",
+    "epochs": 8,
+    "n_folds": 3,
+    "dropout_rate": 0.4,
+    "large_size": 256,
+    "repeat_factor": 4,
+    "num_test_patches": 5,
+    "datasets": [
+      "NTU-Roselab-Dataset",
+      "Devices (5 mobiles)"
+    ]
+  }
+}
+================================================================================
+
